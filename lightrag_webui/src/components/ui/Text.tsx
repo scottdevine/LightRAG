@@ -1,5 +1,6 @@
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/Tooltip'
 import { cn } from '@/lib/utils'
+import '../custom-styles.css'
 
 const Text = ({
   text,
@@ -19,7 +20,7 @@ const Text = ({
   if (!tooltip) {
     return (
       <label
-        className={cn(className, onClick !== undefined ? 'cursor-pointer' : undefined)}
+        className={cn(className, 'parameters-panel-text', onClick !== undefined ? 'cursor-pointer' : undefined)}
         onClick={onClick}
       >
         {text}
@@ -32,7 +33,7 @@ const Text = ({
       <Tooltip>
         <TooltipTrigger asChild>
           <label
-            className={cn(className, onClick !== undefined ? 'cursor-pointer' : undefined)}
+            className={cn(className, 'parameters-panel-text', onClick !== undefined ? 'cursor-pointer' : undefined)}
             onClick={onClick}
           >
             {text}

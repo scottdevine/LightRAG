@@ -36,6 +36,7 @@ from .base import (
     QueryParam,
 )
 from .prompt import GRAPH_FIELD_SEP, PROMPTS
+from .custom_prompts import get_response_type_instructions
 import time
 from dotenv import load_dotenv
 
@@ -915,9 +916,11 @@ async def kg_query(
         )
 
     sys_prompt_temp = system_prompt if system_prompt else PROMPTS["rag_response"]
+    format_instructions = get_response_type_instructions(query_param.response_type)
     sys_prompt = sys_prompt_temp.format(
         context_data=context,
         response_type=query_param.response_type,
+        format_instructions=format_instructions,
         history=history_context,
     )
 
@@ -1272,6 +1275,7 @@ async def mix_kg_vector_query(
         return context_str
 
     # 5. Construct hybrid prompt
+    format_instructions = get_response_type_instructions(query_param.response_type)
     sys_prompt = (
         system_prompt if system_prompt else PROMPTS["mix_rag_response"]
     ).format(
@@ -1282,6 +1286,7 @@ async def mix_kg_vector_query(
         if vector_context
         else "No relevant text information found",
         response_type=query_param.response_type,
+        format_instructions=format_instructions,
         history=history_context,
     )
 
@@ -2085,9 +2090,11 @@ async def naive_query(
         )
 
     sys_prompt_temp = system_prompt if system_prompt else PROMPTS["naive_rag_response"]
+    format_instructions = get_response_type_instructions(query_param.response_type)
     sys_prompt = sys_prompt_temp.format(
         content_data=section,
         response_type=query_param.response_type,
+        format_instructions=format_instructions,
         history=history_context,
     )
 

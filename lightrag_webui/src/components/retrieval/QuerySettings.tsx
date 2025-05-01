@@ -25,10 +25,10 @@ export default function QuerySettings() {
   }, [])
 
   return (
-    <Card className="flex shrink-0 flex-col min-w-[220px]">
+    <Card className="flex shrink-0 flex-col min-w-[220px]" style={{ borderColor: 'yellow', borderWidth: '2px' }}>
       <CardHeader className="px-4 pt-4 pb-2">
-        <CardTitle>{t('retrievePanel.querySettings.parametersTitle')}</CardTitle>
-        <CardDescription>{t('retrievePanel.querySettings.parametersDescription')}</CardDescription>
+        <CardTitle style={{ color: 'yellow', fontWeight: 'bold' }}>{t('retrievePanel.querySettings.parametersTitle')}</CardTitle>
+        <CardDescription style={{ color: 'yellow' }}>{t('retrievePanel.querySettings.parametersDescription')}</CardDescription>
       </CardHeader>
       <CardContent className="m-0 flex grow flex-col p-0 text-xs">
         <div className="relative size-full">
@@ -78,9 +78,16 @@ export default function QuerySettings() {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectGroup>
+                    <SelectItem value="Step-by-Step Guide">{t('retrievePanel.querySettings.responseFormatOptions.stepByStepGuide')}</SelectItem>
                     <SelectItem value="Multiple Paragraphs">{t('retrievePanel.querySettings.responseFormatOptions.multipleParagraphs')}</SelectItem>
                     <SelectItem value="Single Paragraph">{t('retrievePanel.querySettings.responseFormatOptions.singleParagraph')}</SelectItem>
                     <SelectItem value="Bullet Points">{t('retrievePanel.querySettings.responseFormatOptions.bulletPoints')}</SelectItem>
+                    <SelectItem value="Table Format">{t('retrievePanel.querySettings.responseFormatOptions.tableFormat')}</SelectItem>
+                    <SelectItem value="Short Report">{t('retrievePanel.querySettings.responseFormatOptions.shortReport')}</SelectItem>
+                    <SelectItem value="Detailed Report">{t('retrievePanel.querySettings.responseFormatOptions.detailedReport')}</SelectItem>
+                    <SelectItem value="Technical Documentation">{t('retrievePanel.querySettings.responseFormatOptions.technicalDocumentation')}</SelectItem>
+                    <SelectItem value="FAQ Format">{t('retrievePanel.querySettings.responseFormatOptions.faqFormat')}</SelectItem>
+                    <SelectItem value="Comparative Analysis">{t('retrievePanel.querySettings.responseFormatOptions.comparativeAnalysis')}</SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>

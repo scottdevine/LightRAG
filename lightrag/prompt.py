@@ -1,5 +1,6 @@
 from __future__ import annotations
 from typing import Any
+from lightrag.custom_prompts import get_response_type_instructions
 
 GRAPH_FIELD_SEP = "<SEP>"
 
@@ -218,11 +219,12 @@ When handling relationships with timestamps:
 
 ---Response Rules---
 
-- Target format and length: {response_type}
+- Target format: {response_type}
+{format_instructions}
 - Use markdown formatting with appropriate section headings
 - Please respond in the same language as the user's question.
 - Ensure the response maintains continuity with the conversation history.
-- List up to 5 most important reference sources at the end under "References" section. Clearly indicating whether each source is from Knowledge Graph (KG) or Vector Data (DC), and include the file path if available, in the following format: [KG/DC] file_path
+- List all reference sources used in the response at the end under "References" section.Clearly indicating whether each source is from Knowledge Graph (KG) or Vector Data (DC), and include the file path if available, in the following format: [KG/DC] file_path
 - If you don't know the answer, just say so.
 - Do not make anything up. Do not include information not provided by the Knowledge Base."""
 
@@ -316,11 +318,12 @@ When handling content with timestamps:
 
 ---Response Rules---
 
-- Target format and length: {response_type}
+- Target format: {response_type}
+{format_instructions}
 - Use markdown formatting with appropriate section headings
 - Please respond in the same language as the user's question.
 - Ensure the response maintains continuity with the conversation history.
-- List up to 5 most important reference sources at the end under "References" section. Clearly indicating whether each source is from Knowledge Graph (KG) or Vector Data (DC), and include the file path if available, in the following format: [KG/DC] file_path
+- List all reference sources used in the response at the end under "References" section.Clearly indicating whether each source is from Knowledge Graph (KG) or Vector Data (DC), and include the file path if available, in the following format: [KG/DC] file_path
 - If you don't know the answer, just say so.
 - Do not include information not provided by the Document Chunks."""
 
@@ -376,12 +379,13 @@ When handling information with timestamps:
 
 ---Response Rules---
 
-- Target format and length: {response_type}
+- Target format: {response_type}
+{format_instructions}
 - Use markdown formatting with appropriate section headings
 - Please respond in the same language as the user's question.
 - Ensure the response maintains continuity with the conversation history.
 - Organize answer in sections focusing on one main point or aspect of the answer
 - Use clear and descriptive section titles that reflect the content
-- List up to 5 most important reference sources at the end under "References" section. Clearly indicating whether each source is from Knowledge Graph (KG) or Vector Data (DC), and include the file path if available, in the following format: [KG/DC] file_path
+- List all reference sources used in the response at the end under "References" section. Clearly indicating whether each source is from Knowledge Graph (KG) or Vector Data (DC), and include the file path if available, in the following format: [KG/DC] file_path
 - If you don't know the answer, just say so. Do not make anything up.
 - Do not include information not provided by the Data Sources."""

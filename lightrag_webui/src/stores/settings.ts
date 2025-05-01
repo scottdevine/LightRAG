@@ -167,7 +167,7 @@ const useSettingsStoreBase = create<SettingsState>()(
     {
       name: 'settings-storage',
       storage: createJSONStorage(() => localStorage),
-      version: 12,
+      version: 13,
       migrate: (state: any, version: number) => {
         if (version < 2) {
           state.showEdgeLabel = false
@@ -224,6 +224,19 @@ const useSettingsStoreBase = create<SettingsState>()(
         if (version < 12) {
           // Clear retrieval history to avoid compatibility issues with MessageWithError type
           state.retrievalHistory = []
+        }
+        if (version < 13) {
+          // Update the response_type if it's one of the original three
+          // This ensures that users who had one of the original response types selected
+          // will continue to see the same response type in the UI
+          if (state.querySettings && ['Multiple Paragraphs', 'Single Paragraph', 'Bullet Points'].includes(state.querySettings.response_type)) {
+            // Keep the existing response_type
+          } else {
+            // Set a default response_type
+            if (state.querySettings) {
+              state.querySettings.response_type = 'Multiple Paragraphs'
+            }
+          }
         }
         return state
       }

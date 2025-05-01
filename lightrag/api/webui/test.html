@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Yellow Text</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .card {
+            background-color: #2a2a2a;
+            border: 2px solid yellow;
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px;
+        }
+        
+        .card-title {
+            color: yellow;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px black;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .card-description {
+            color: yellow;
+            margin-bottom: 20px;
+        }
+        
+        .parameter {
+            margin-bottom: 15px;
+        }
+        
+        .parameter-label {
+            color: yellow;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px black;
+            margin-bottom: 5px;
+        }
+        
+        .parameter-value {
+            background-color: #3a3a3a;
+            border: 1px solid #4a4a4a;
+            border-radius: 4px;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="card-title">Parameters</div>
+        <div class="card-description">Configure your query parameters</div>
+        
+        <div class="parameter">
+            <div class="parameter-label">Query Mode</div>
+            <div class="parameter-value">Global</div>
+        </div>
+        
+        <div class="parameter">
+            <div class="parameter-label">Response Format</div>
+            <div class="parameter-value">Multiple Paragraphs</div>
+        </div>
+        
+        <div class="parameter">
+            <div class="parameter-label">Top K Results</div>
+            <div class="parameter-value">10</div>
+        </div>
+        
+        <div class="parameter">
+            <div class="parameter-label">Max Tokens for Text Unit</div>
+            <div class="parameter-value">4000</div>
+        </div>
+    </div>
+</body>
+</html>

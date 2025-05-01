@@ -1,0 +1,17 @@
+/* Custom styles to make the text on the right side yellow */
+
+/* Target the parameters panel text */
+.card-title, 
+.card-description,
+.ml-1,
+[data-radix-select-trigger],
+[data-radix-select-value] {
+  color: yellow !important;
+  font-weight: bold !important;
+  text-shadow: 1px 1px 2px black !important;
+}
+
+/* Add a yellow border to the parameters card */
+.flex.shrink-0.flex-col.min-w-\[220px\] {
+  border: 2px solid yellow !important;
+}

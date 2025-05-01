@@ -322,11 +322,18 @@
         "bypass": "Bypass"
       },
       "responseFormat": "Response Format",
-      "responseFormatTooltip": "Defines the response format. Examples:\n• Multiple Paragraphs\n• Single Paragraph\n• Bullet Points",
+      "responseFormatTooltip": "Defines the response format. Examples:\n• Multiple Paragraphs\n• Single Paragraph\n• Bullet Points\n• Table Format\n• Step-by-Step Guide\n• Short Report\n• Detailed Report\n• Technical Documentation\n• FAQ Format\n• Comparative Analysis",
       "responseFormatOptions": {
         "multipleParagraphs": "Multiple Paragraphs",
         "singleParagraph": "Single Paragraph",
-        "bulletPoints": "Bullet Points"
+        "bulletPoints": "Bullet Points",
+        "tableFormat": "Table Format",
+        "stepByStepGuide": "Step-by-Step Guide",
+        "shortReport": "Short Report",
+        "detailedReport": "Detailed Report",
+        "technicalDocumentation": "Technical Documentation",
+        "faqFormat": "FAQ Format",
+        "comparativeAnalysis": "Comparative Analysis"
       },
       "topK": "Top K Results",
       "topKTooltip": "Number of top items to retrieve. Represents entities in 'local' mode and relationships in 'global' mode",
